@@ -1,10 +1,6 @@
 <template>
 <b-container>
     <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/auth">Auth</router-link>
-    </div>
     <router-view/>
   </div>
 </b-container>
@@ -20,10 +16,14 @@ html {
 body {
   height: 100%;
   box-sizing: inherit;
+  margin: 0;
   background: linear-gradient(0deg, $main-color 0%, $secondary-color 100%);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 #app {
+  margin-top: 20px;
   color: $white;
 }
 #nav {
