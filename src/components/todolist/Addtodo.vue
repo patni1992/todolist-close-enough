@@ -13,12 +13,6 @@
 
 <script>
 export default {
-  name: "AddTodo",
-  props: {
-    msg: String
-  }
+  name: "AddTodo"
 };
 </script>
-
-<style scoped lang="scss">
-</style>
