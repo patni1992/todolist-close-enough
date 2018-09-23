@@ -1,7 +1,7 @@
 <template>
- <li>
-     {{todo.title}}
- </li>
+<b-list-group-item v-bind:class="{ completed: todo.completed }" class="todo-item ">
+    {{todo.title}}
+</b-list-group-item>
 </template>
 
 <script>
@@ -13,6 +13,19 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped lang="scss">
+<style lang="scss" scoped>
+@import "../../styles/main.scss";
+
+.todo-item {
+  color: $main-color;
+  font-size: 22px;
+}
+
+.completed {
+  text-decoration: line-through;
+
+  &:hover {
+    text-decoration: line-through;
+  }
+}
 </style>

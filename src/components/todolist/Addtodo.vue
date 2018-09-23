@@ -1,7 +1,14 @@
 <template>
-  <div class="add-todo">
+<div class="add-todo">
     <h1>Add-todo {{msg}}</h1>
-  </div>
+    <b-form>
+        <b-form-group id="exampleInputGroup1">
+            <b-form-input id="exampleInput1" type="text" required placeholder="Enter todo">
+            </b-form-input>
+        </b-form-group>
+        <b-button type="submit" variant="success">Submit</b-button>
+    </b-form>
+</div>
 </template>
 
 <script>
@@ -13,6 +20,5 @@ export default {
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped lang="scss">
 </style>
