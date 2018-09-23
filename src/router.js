@@ -5,7 +5,7 @@ import Auth from "./views/Auth.vue";
 
 Vue.use(Router);
 
-export default new Router({
+const router = new Router({
   mode: "history",
   base: process.env.BASE_URL,
   routes: [
@@ -21,3 +21,17 @@ export default new Router({
     }
   ]
 });
+
+router.beforeEach((to, from, next) => {
+  const publicPages = ["/auth"];
+  const authRequired = !publicPages.includes(to.path);
+  const jwtToken = localStorage.getItem("jwt-token");
+
+  if (authRequired && !jwtToken) {
+    return next("/auth");
+  }
+
+  next();
+});
+
+export default router;
